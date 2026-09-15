@@ -52,10 +52,29 @@ src/
 ├── models/         Tipos y modelos de dominio
 ├── routes/         Definición de endpoints
 ├── services/       Reglas de negocio
+├── grupo1/         Grupo 1: creación de hábitos
+├── grupo2/         Grupo 2: listado y gestión de hábitos
+├── grupo3/         Grupo 3: registro de cumplimiento diario
+├── grupo4/         Grupo 4: rachas de hábitos
+├── grupo5/         Grupo 5: resumen semanal
 ├── utils/          Utilidades reutilizables
 ├── app.ts          Configuración de Express
 └── server.ts       Arranque del servidor
 tests/              Pruebas automatizadas
 ```
 
-Cada integrante puede trabajar en un módulo separado y abrir una rama desde esta base.
+## Trabajo por grupos
+
+Cada grupo debe trabajar dentro de su carpeta correspondiente:
+
+| Carpeta | Responsabilidad |
+| --- | --- |
+| `src/grupo1` | Crear hábitos |
+| `src/grupo2` | Listar, editar y eliminar hábitos |
+| `src/grupo3` | Registrar cumplimientos diarios |
+| `src/grupo4` | Calcular racha actual y mejor racha |
+| `src/grupo5` | Generar el resumen semanal |
+
+Antes de comenzar, cada grupo debe leer el `README.md` de su carpeta. Se recomienda crear una rama con el nombre del grupo, trabajar únicamente en su carpeta y agregar pruebas en `tests/grupoX`.
+
+La coordinación y las reglas para unir el trabajo están en [TRABAJO-POR-GRUPOS.md](TRABAJO-POR-GRUPOS.md).
