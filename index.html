@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HU-03 · Registro de cumplimiento diario (Vue)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app" class="wrap">
+  <header>
+    <span class="badge">HU-03 · Épica 2 · Vue 3</span>
+    <h1>Registro de cumplimiento diario</h1>
+    <p class="subtitle">Marca un hábito como completado hoy. Solo se permite un registro por día.</p>
+  </header>
+
+  <form class="new-habit" @submit.prevent="handleAddHabit">
+    <input
+      type="text"
+      v-model="newHabitName"
+      placeholder="Nombre del hábito (ej: Tomar agua)"
+      required
+      maxlength="40"
+    >
+    <input type="color" v-model="newHabitColor" title="Color del hábito">
+    <button type="submit">Agregar</button>
+  </form>
+
+  <div class="habit-list">
+    <div
+      v-for="habit in habits"
+      :key="habit.id"
+      class="habit-card"
+      :style="{ '--habit-color': habit.color }"
+    >
+      <div class="habit-info">
+        <span class="habit-name">{{ habit.name }}</span>
+        <span class="streaks">
+          <span>🔥 Racha actual: <b>{{ streaksOf(habit).current }}</b></span>
+          <span>🏆 Mejor: <b>{{ streaksOf(habit).best }}</b></span>
+        </span>
+      </div>
+      <button
+        class="check-btn"
+        :class="{ done: doneToday(habit) }"
+        :disabled="doneToday(habit)"
+        :title="doneToday(habit) ? 'Ya registrado hoy' : 'Marcar como completado hoy'"
+        @click="handleCheck(habit.id)"
+      >
+        {{ doneToday(habit) ? '✓' : '' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="empty" v-if="habits.length === 0">
+    Aún no tienes hábitos. Crea el primero arriba ☝️
+  </div>
+
+  <div class="toast" :class="{ show: toastVisible, warn: toastWarn }">
+    {{ toastMsg }}
+  </div>
+</div>
+
+<!-- Vue 3 vía CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
+<!-- Capa de "backend" (localStorage), independiente de Vue -->
+<script src="storage.js"></script>
+<!-- Componente Vue (frontend) -->
+<script src="app.js"></script>
+<!-- Pruebas automatizadas -->
+<script src="tests.js"></script>
+</body>
+</html>
