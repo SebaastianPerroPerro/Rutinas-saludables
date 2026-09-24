@@ -16,4 +16,6 @@ export interface CreateHabitInput {
   color?: unknown;
 }
 
+export type UpdateHabitInput = Partial<CreateHabitInput>;
+
 export type ValidationErrors = Record<string, string>;

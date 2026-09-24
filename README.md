@@ -43,6 +43,8 @@ La API queda disponible en `http://localhost:3000`.
 - `GET /api/health` - Estado del servicio.
 - `GET /api/habits` - Lista los hábitos creados.
 - `POST /api/habits` - Crea un hábito validado.
+- `PATCH /api/habits/:id` - Edita un hábito activo.
+- `DELETE /api/habits/:id` - Desactiva un hábito.
 
 ## Estructura
 

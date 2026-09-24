@@ -1,10 +1,8 @@
 import type { Request, Response } from 'express';
-import { HabitService } from '../../grupo1/habit.service.js';
-
-const habitService = new HabitService();
+import { habitService } from '../../grupo1/habit.service.js';
 
 export function listHabits(_request: Request, response: Response): void {
-  response.json(habitService.list());
+  response.json(habitService.list(true));
 }
 
 export function createHabit(request: Request, response: Response): void {

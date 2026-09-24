@@ -3,6 +3,7 @@ import type {
   CreateHabitInput,
   Habit,
   ValidationErrors,
+  UpdateHabitInput,
 } from './habit.types.js';
 
 const NOMBRE_MIN = 3;
@@ -85,8 +86,12 @@ export function createHabit(
 export class HabitService {
   private readonly habits: Habit[] = [];
 
-  list(): Habit[] {
-    return [...this.habits];
+  list(activeOnly = false): Habit[] {
+    return this.habits.filter((habit) => !activeOnly || habit.activo);
+  }
+
+  findById(id: string): Habit | undefined {
+    return this.habits.find((habit) => habit.id === id);
   }
 
   create(input: CreateHabitInput): Habit {
@@ -94,4 +99,38 @@ export class HabitService {
     this.habits.push(habit);
     return habit;
   }
+
+  update(id: string, input: UpdateHabitInput): Habit | undefined {
+    const habit = this.findById(id);
+    if (!habit || !habit.activo) return undefined;
+
+    const updatedInput = {
+      nombre: input.nombre ?? habit.nombre,
+      descripcion: input.descripcion ?? habit.descripcion,
+      metaSemanal: input.metaSemanal ?? habit.metaSemanal,
+      color: input.color ?? habit.color,
+    };
+    const otherHabits = this.habits.filter((candidate) => candidate.id !== id);
+    const errors = validateHabit(updatedInput, otherHabits);
+    if (Object.keys(errors).length > 0) {
+      const error = new Error('Datos de hábito inválidos');
+      Object.assign(error, { errors });
+      throw error;
+    }
+
+    habit.nombre = String(updatedInput.nombre).trim();
+    habit.descripcion = String(updatedInput.descripcion).trim();
+    habit.metaSemanal = Number(updatedInput.metaSemanal);
+    habit.color = String(updatedInput.color).trim().toLowerCase();
+    return habit;
+  }
+
+  deactivate(id: string): Habit | undefined {
+    const habit = this.findById(id);
+    if (!habit) return undefined;
+    habit.activo = false;
+    return habit;
+  }
 }
+
+export const habitService = new HabitService();
