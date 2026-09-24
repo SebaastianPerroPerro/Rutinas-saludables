@@ -68,6 +68,17 @@ export function renderizarResumen() {
         elTextoGlobal.textContent = `${resumen.porcentajeCumplimientoGlobal}% de metas semanales`;
     }
 
+    // Aviso de semana sin actividad (Criterio 4)
+    const elAvisoSinActividad = document.getElementById('aviso-sin-actividad');
+    if (elAvisoSinActividad) {
+        if (resumen.totalCumplimientosSemana === 0) {
+            elAvisoSinActividad.textContent = 'No hay actividad registrada en esta semana.';
+            elAvisoSinActividad.style.display = 'block';
+        } else {
+            elAvisoSinActividad.style.display = 'none';
+        }
+    }
+
     // Listas
     renderizarListaAlcanzados(resumen.habitosAlcanzados);
     renderizarListaPendientes(resumen.habitosPendientes);

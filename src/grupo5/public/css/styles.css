@@ -273,3 +273,15 @@ ul.lista-habitos {
     background: #e5e7eb;
     border-color: #9ca3af;
 }
+
+.aviso-sin-actividad {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 14px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 500;
+}
