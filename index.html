@@ -63,9 +63,11 @@
 
 <!-- Vue 3 vía CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
-<!-- Capa de "backend" (localStorage), independiente de Vue -->
+<!-- Modelo: capa de "backend" (localStorage), independiente de Vue -->
 <script src="storage.js"></script>
-<!-- Componente Vue (frontend) -->
+<!-- Controlador: media entre Modelo y Vista -->
+<script src="controller.js"></script>
+<!-- Vista: componente Vue (frontend) -->
 <script src="app.js"></script>
 <!-- Pruebas automatizadas -->
 <script src="tests.js"></script>
