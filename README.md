@@ -41,6 +41,10 @@ La API queda disponible en `http://localhost:3000`.
 
 - `GET /` - Información básica de la API.
 - `GET /api/health` - Estado del servicio.
+- `GET /api/habits` - Lista los hábitos creados.
+- `POST /api/habits` - Crea un hábito validado.
+- `PATCH /api/habits/:id` - Edita un hábito activo.
+- `DELETE /api/habits/:id` - Desactiva un hábito.
 
 ## Estructura
 
@@ -62,6 +66,10 @@ src/
 └── server.ts       Arranque del servidor
 tests/              Pruebas automatizadas
 ```
+
+El Grupo 1 está integrado en `src/grupo1` y sus pruebas en `tests/grupo1`.
+La API mantiene los hábitos en memoria durante la ejecución del servidor; la
+persistencia definitiva se definirá junto con el contrato común de los grupos.
 
 ## Trabajo por grupos
 

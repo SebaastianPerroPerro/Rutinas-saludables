@@ -13,10 +13,19 @@ Esta carpeta es exclusiva para listar y administrar hábitos activos.
 
 ## Entregables
 
-- Implementación del listado y la gestión.
+- Implementación del listado y la gestión en `src/controllers/grupo2` y `src/routes/grupo2`.
 - Integración con el contrato común de hábitos.
 - Pruebas en `tests/grupo2`.
 - Una breve explicación del uso en este archivo.
+
+## Endpoints
+
+- `GET /api/habits` lista únicamente los hábitos activos.
+- `PATCH /api/habits/:id` edita nombre, descripción, meta semanal o color.
+- `DELETE /api/habits/:id` desactiva un hábito sin borrar su historial.
+
+Las ediciones reutilizan las validaciones del Grupo 1 y no permiten nombres
+duplicados entre hábitos activos.
 
 ## Demostración
 
