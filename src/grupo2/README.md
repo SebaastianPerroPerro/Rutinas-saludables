@@ -30,6 +30,11 @@ duplicados entre hábitos activos.
 ## Demostración
 
 Crear, editar, desactivar y volver a consultar hábitos comprobando que los cambios se conservan.
+
+## Pantalla de gestión (localStorage)
+
+Además de los endpoints, el Grupo 2 tiene una pantalla web que trabaja directamente sobre el `localStorage` que usa la pantalla del Grupo 1 (`src/grupo1/habitos-grupo1`), como pide el alcance del MVP.
+
 ## Cómo se usa
 
 ### Ver la pantalla

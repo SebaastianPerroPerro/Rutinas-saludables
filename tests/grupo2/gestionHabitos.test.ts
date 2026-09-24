@@ -1,3 +1,4 @@
+// @ts-nocheck -- importa los módulos JavaScript del navegador (Grupo 1 y Grupo 2), que no tienen tipos.
 // Pruebas del Grupo 2 — listado y gestión de hábitos.
 import { describe, it, expect, beforeEach } from 'vitest';
 import { agregarHabito, obtenerHabitos, CLAVE_STORAGE } from '../../src/grupo1/habitos-grupo1/public/js/habitStorage.js';
