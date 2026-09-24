@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+.contenedor {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+header.cabecera {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.75rem;
+    color: #111827;
+}
+
+.subtitulo {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.tarjeta {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 1.25rem;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Selector de semana */
+.semana-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: #f9fafb;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.semana-info {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.btn-nav {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #374151;
+    transition: background 0.15s, border-color 0.15s;
+    width: auto;
+    margin: 0;
+}
+
+.btn-nav:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+/* Grid de métricas */
+.metricas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.metrica-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.metrica-valor {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4f46e5;
+    line-height: 1.2;
+}
+
+.metrica-etiqueta {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    margin-top: 4px;
+}
+
+/* Barra global */
+.barra-global-contenedor {
+    margin-top: 16px;
+}
+
+.barra-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #4b5563;
+}
+
+.barra-fondo {
+    background: #e5e7eb;
+    border-radius: 9999px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    background: #4f46e5;
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.4s ease;
+}
+
+/* Listas de hábitos */
+ul.lista-habitos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.habito-card {
+    border-left: 6px solid #4f46e5;
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 12px 14px;
+    border-top: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.habito-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
+.habito-titulo {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #111827;
+}
+
+.habito-descripcion {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 2px 0 6px 0;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-exito {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge-pendiente {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge-conteo {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 0.8rem;
+}
+
+.habito-progreso-barra {
+    background: #e5e7eb;
+    border-radius: 9999px;
+    height: 6px;
+    margin: 8px 0 6px 0;
+    overflow: hidden;
+}
+
+.habito-progreso-relleno {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.habito-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.vacio {
+    color: #6b7280;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px dashed #d1d5db;
+    margin: 0;
+}
+
+/* Botones de acción */
+.acciones-demo {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-secundario {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    transition: background 0.15s, border-color 0.15s;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn-secundario:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}

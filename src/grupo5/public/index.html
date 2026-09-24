@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Hábitos — Resumen Semanal</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <main class="contenedor">
+        <header class="cabecera">
+            <h1>Mis Hábitos</h1>
+            <p class="subtitulo">Resumen Semanal de Cumplimiento</p>
+        </header>
+
+        <!-- HU-05: Navegación de semana y métricas -->
+        <section class="tarjeta">
+            <div class="semana-control">
+                <button type="button" class="btn-nav" id="btn-semana-anterior" aria-label="Semana anterior">‹ Anterior</button>
+                <span class="semana-info" id="texto-semana">Cargando...</span>
+                <button type="button" class="btn-nav" id="btn-semana-hoy">Hoy</button>
+                <button type="button" class="btn-nav" id="btn-semana-siguiente" aria-label="Semana siguiente">Siguiente ›</button>
+            </div>
+
+            <div class="metricas-grid">
+                <div class="metrica-card">
+                    <div class="metrica-valor" id="metric-total-cumplimientos">0</div>
+                    <div class="metrica-etiqueta">Cumplimientos</div>
+                </div>
+                <div class="metrica-card">
+                    <div class="metrica-valor" id="metric-metas-alcanzadas">0 / 0</div>
+                    <div class="metrica-etiqueta">Metas Logradas</div>
+                </div>
+                <div class="metrica-card">
+                    <div class="metrica-valor" id="metric-cumplimiento-global">0%</div>
+                    <div class="metrica-etiqueta">Cumplimiento</div>
+                </div>
+            </div>
+
+            <div class="barra-global-contenedor">
+                <div class="barra-header">
+                    <span>Progreso global de la semana</span>
+                    <span id="texto-global-progreso">0%</span>
+                </div>
+                <div class="barra-fondo">
+                    <div class="barra-progreso" id="barra-global-progreso" style="width: 0%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Metas Alcanzadas -->
+        <section class="tarjeta">
+            <h2>
+                <span>Metas alcanzadas</span>
+            </h2>
+            <ul class="lista-habitos" id="lista-alcanzados"></ul>
+        </section>
+
+        <!-- Sección de Metas Pendientes -->
+        <section class="tarjeta">
+            <h2>
+                <span>Hábitos pendientes</span>
+            </h2>
+            <ul class="lista-habitos" id="lista-pendientes"></ul>
+        </section>
+
+        <!-- Navegación a la página principal -->
+        <section class="tarjeta">
+            <a href="/grupo1/" class="btn-secundario btn-volver">← Ir a la página principal</a>
+        </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
