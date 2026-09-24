@@ -1,0 +1,126 @@
+/* Estilos propios del Grupo 2. La base viene de styles.css del Grupo 1. */
+
+label.filtro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    color: #4b5563;
+    margin: 4px 0 14px;
+    cursor: pointer;
+}
+
+    label.filtro input {
+        width: auto;
+        margin: 0;
+        accent-color: #4f46e5;
+    }
+
+#mensaje-gestion {
+    margin: 0 0 12px;
+}
+
+.habito .fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.habito .estado:not(:empty) {
+    margin-left: 6px;
+    font-size: .75em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
+.habito .hoy {
+    font-size: .75em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+    .habito .hoy.hecho {
+        background: #dcfce7;
+        color: #15803d;
+        font-weight: 600;
+    }
+
+.habito.inactivo {
+    opacity: .65;
+}
+
+.habito .descripcion:empty {
+    display: none;
+}
+
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+    .acciones[hidden],
+    .acciones button[hidden] {
+        display: none;
+    }
+
+    .acciones button {
+        width: auto;
+        margin: 0;
+        padding: 5px 12px;
+        font-size: .85em;
+        background: #eef2ff;
+        color: #4338ca;
+    }
+
+        .acciones button:hover {
+            background: #e0e7ff;
+        }
+
+        .acciones button.secundario,
+        .acciones button[data-opcion="desactivar"],
+        .acciones button[data-opcion="reactivar"] {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+            .acciones button.secundario:hover,
+            .acciones button[data-opcion="desactivar"]:hover,
+            .acciones button[data-opcion="reactivar"]:hover {
+                background: #e5e7eb;
+            }
+
+        .acciones button.peligro {
+            background: #fef2f2;
+            color: #b91c1c;
+        }
+
+            .acciones button.peligro:hover {
+                background: #fee2e2;
+            }
+
+        .acciones button[type="submit"] {
+            background: #4f46e5;
+            color: #fff;
+        }
+
+            .acciones button[type="submit"]:hover {
+                background: #4338ca;
+            }
+
+.form-edicion {
+    margin-top: 10px;
+    padding-top: 6px;
+    border-top: 1px solid #e5e7eb;
+}
+
+    .form-edicion .swatch input {
+        margin: 0;
+    }

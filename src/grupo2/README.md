@@ -30,3 +30,42 @@ duplicados entre hábitos activos.
 ## Demostración
 
 Crear, editar, desactivar y volver a consultar hábitos comprobando que los cambios se conservan.
+## Cómo se usa
+
+### Ver la pantalla
+
+```bash
+npx tsx src/grupo2/servidor.ts
+```
+
+- Gestión de hábitos (Grupo 2): <http://localhost:3002>
+- Nuevo hábito (Grupo 1): <http://localhost:3002/grupo1/habitos-grupo1/public/index.html>
+
+Las dos pantallas se sirven desde el mismo servidor, así que comparten el mismo `localStorage`: lo que se crea en la del Grupo 1 aparece en el listado del Grupo 2.
+
+### Qué hace
+
+- Lista los hábitos activos ordenados por nombre, con su color, meta semanal y si ya se completó hoy.
+- **Editar**: cambia nombre, descripción, meta semanal y color, con las mismas validaciones del Grupo 1. Conserva el `id`, la fecha de creación y los cumplimientos. `Escape` cancela la edición.
+- **Desactivar / Reactivar**: el hábito deja de aparecer en el listado pero conserva su historial. Con "Mostrar hábitos desactivados" se pueden ver y reactivar.
+- **Eliminar**: borra el hábito y su historial (pide confirmación).
+- Muestra un mensaje cuando no hay hábitos para listar.
+
+### Archivos
+
+| Archivo | Contenido |
+| --- | --- |
+| `public/js/gestionHabitos.js` | Lógica: `listarHabitos`, `obtenerHabitoPorId`, `editarHabito`, `desactivarHabito`, `reactivarHabito`, `eliminarHabito`, `completadoHoy` |
+| `public/js/app.js` | Controlador de la pantalla |
+| `public/index.html`, `public/css/gestion.css` | Pantalla y estilos (reutiliza `styles.css` del Grupo 1) |
+| `servidor.ts` | Servidor de la demostración |
+
+### Contrato común
+
+Usa `obtenerHabitos` y `guardarHabitos` (`habitStorage.js`) y `validarHabito` (`habitModel.js`) del Grupo 1. Los hábitos se guardan en `localStorage` con la clave `habitos`, y "desactivar" solo cambia `activo` a `false`.
+
+### Pruebas
+
+```bash
+npx vitest run tests/grupo2
+```
