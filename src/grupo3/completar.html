@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Hábitos — Marcar Completado</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Registrar Progreso Diario</h1>
+
+        <section class="tarjeta" id="pantalla-completar">
+            <h2 id="nombre-habito">Cargando hábito...</h2>
+            <p id="descripcion-habito"></p>
+            <p><strong id="meta-habito"></strong></p>
+
+            <button type="button" id="btn-marcar-hoy" class="btn-guardar">
+                Marcar como completado hoy
+            </button>
+            
+            <p id="mensaje-estado" class="mensaje" role="status"></p>
+            
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="boton-enlace">← Volver al inicio</a>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="js/completar.js"></script>
+</body>
+</html>
