@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Hábitos — Gestión</title>
+    <link rel="stylesheet" href="../../grupo1/habitos-grupo1/public/css/styles.css" />
+    <link rel="stylesheet" href="css/gestion.css" />
+</head>
+<body>
+    <main class="contenedor">
+        <header class="cabecera">
+            <h1>Mis Hábitos</h1>
+            <a id="ir-nuevo" class="boton-enlace" href="../../grupo1/habitos-grupo1/public/index.html">+ Nuevo hábito</a>
+        </header>
+
+        <!-- Grupo 2: listado y gestión de hábitos -->
+        <section class="tarjeta" id="pantalla-gestion">
+            <h2>Listado de hábitos</h2>
+
+            <label class="filtro">
+                <input type="checkbox" id="mostrar-inactivos" />
+                Mostrar hábitos desactivados
+            </label>
+
+            <p id="mensaje-gestion" class="mensaje" role="status"></p>
+            <ul id="lista-gestion"></ul>
+        </section>
+    </main>
+
+    <template id="plantilla-habito">
+        <li class="habito">
+            <div class="fila">
+                <div>
+                    <strong class="nombre"></strong>
+                    <span class="estado"></span>
+                </div>
+                <span class="hoy"></span>
+            </div>
+            <span class="meta"></span>
+            <p class="descripcion"></p>
+            <div class="acciones">
+                <button type="button" data-opcion="editar">Editar</button>
+                <button type="button" data-opcion="desactivar">Desactivar</button>
+                <button type="button" data-opcion="reactivar">Reactivar</button>
+                <button type="button" data-opcion="eliminar" class="peligro">Eliminar</button>
+            </div>
+        </li>
+    </template>
+
+    <template id="plantilla-edicion">
+        <form class="form-edicion" novalidate>
+            <label>Nombre *
+                <input name="nombre" type="text" maxlength="50" />
+            </label>
+            <small class="error" data-error="nombre"></small>
+
+            <label>Descripción (opcional)
+                <textarea name="descripcion" maxlength="200" rows="2"></textarea>
+            </label>
+            <small class="error" data-error="descripcion"></small>
+
+            <label>Meta semanal (1 - 7) *
+                <input name="metaSemanal" type="number" min="1" max="7" />
+            </label>
+            <small class="error" data-error="metaSemanal"></small>
+
+            <fieldset class="colores">
+                <legend>Color *</legend>
+                <div class="paleta"></div>
+            </fieldset>
+            <small class="error" data-error="color"></small>
+
+            <div class="acciones">
+                <button type="submit">Guardar cambios</button>
+                <button type="button" data-opcion="cancelar" class="secundario">Cancelar</button>
+            </div>
+        </form>
+    </template>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
